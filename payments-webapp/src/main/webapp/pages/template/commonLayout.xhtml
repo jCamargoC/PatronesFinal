@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Universal Bank Login</title>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+		integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+		crossorigin="anonymous"></link>
+	
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+		integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+		integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+		crossorigin="anonymous"></script>
+</h:head>
+
+<h:body>
+
+	<div id="page">
+
+		<div id="header">
+
+			<ui:insert name="header">
+				<ui:include src="/pages/template/commonHeader.xhtml" />
+			</ui:insert>
+		</div>
+
+		<div id="content" class="container-fluid">
+			<div class="row">
+				<div class="col-md-3">
+					<h:form>
+						<p:slideMenu style="width:180px">
+							<p:submenu label="Ajax">
+								<p:menuitem value="Save" actionListener="#{menuView.save}"
+									icon="ui-icon-disk" />
+								<p:menuitem value="Update" actionListener="#{menuView.update}"
+									icon="ui-icon-arrowrefresh-1-w" />
+							</p:submenu>
+							<p:submenu label="Non-Ajax">
+								<p:menuitem value="Delete" actionListener="#{menuView.delete}"
+									ajax="false" icon="ui-icon-close" />
+							</p:submenu>
+							<p:submenu label="Navigations">
+								<p:menuitem value="External" url="http://www.primefaces.org"
+									icon="ui-icon-home" />
+								<p:menuitem value="Internal" icon="ui-icon-star" />
+							</p:submenu>
+						</p:slideMenu>
+					</h:form>
+				</div>
+				<div class="col-md-9">
+					<ui:insert name="content">
+						<ui:include src="/pages/template/commonContent.xhtml" />
+					</ui:insert>
+				</div>
+
+			</div>
+		</div>
+
+		
+
+	</div>
+
+</h:body>
+</html>

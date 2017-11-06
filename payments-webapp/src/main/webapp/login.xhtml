@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Universal Bank Login</title>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+		integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+		crossorigin="anonymous"></link>
+		<link rel="stylesheet" href="./assets/css/login.css"></link>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+		integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+		crossorigin="anonymous"></script>
+
+</h:head>
+
+<h:body>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header" align="center">
+				<img class="img-circle" id="img_logo"
+					src="./assets/img/universalbank.png"></img>				
+			</div>
+
+			<!-- Begin # DIV Form -->
+			<div id="div-forms">
+
+				<!-- Begin # Login Form -->
+				<form id="login-form" action="j_security_check" method="post">
+					<div class="modal-body">
+						<div id="div-login-msg">
+							<div id="icon-login-msg"
+								class="glyphicon glyphicon-chevron-right"></div>
+							<span id="text-login-msg">Digite su nombre usuario y
+								password</span>
+						</div>
+						<input id="login_username" name="j_username" class="form-control"
+							type="text" placeholder="Nombre de usuario" required="true" /> <input
+							id="login_password" name="j_password" class="form-control"
+							type="password" placeholder="Password" required="true" />
+						<div class="checkbox">
+							<label> <input type="checkbox"> Remember me</input>
+							</label>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<div>
+							<button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+						</div>
+					</div>
+				</form>
+				<!-- End # Login Form -->
+
+
+			</div>
+			<!-- End # DIV Form -->
+
+		</div>
+	</div>
+
+</h:body>
+</html>
+
