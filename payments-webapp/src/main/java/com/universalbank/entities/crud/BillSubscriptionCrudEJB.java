@@ -36,7 +36,7 @@ public class BillSubscriptionCrudEJB implements IBillSubscriptionCrud{
 		BillSubscription billSubscription=null;
 		if(id!=null) {
 			try {
-				entityManager.find(BillSubscription.class, id);
+				billSubscription=entityManager.find(BillSubscription.class, id);
 			}catch(Exception e) {
 				return null;
 			}

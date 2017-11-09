@@ -6,6 +6,7 @@ import java.time.ZonedDateTime;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,9 +17,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 
 @Entity
-@NamedQueries(
-		{@NamedQuery(name="BillSubscription.getAll",query="SELECT b FROM BillSubscription b"),
-		 @NamedQuery(name="BillSubscription.getAllByClient",query="SELECT b FROM BillSubscription b WHERE b.client.id=:clientId")})
+@NamedQueries({ @NamedQuery(name = "BillSubscription.getAll", query = "SELECT b FROM BillSubscription b"),
+		@NamedQuery(name = "BillSubscription.getAllByClient", query = "SELECT b FROM BillSubscription b WHERE b.client.id=:clientId") })
 public class BillSubscription implements Serializable {
 
 	@Id
@@ -34,11 +34,16 @@ public class BillSubscription implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private ScheduleTypeEnum scheduleType;
 
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name = "client_id")
 	private Client client;
 
 	private ZonedDateTime dueDate;
+
+	@Enumerated(EnumType.STRING)
+	private PaymentTypeEnum paymentType;
+
+	private Double amount;
 
 	public Long getId() {
 		return id;
@@ -88,4 +93,20 @@ public class BillSubscription implements Serializable {
 		this.client = client;
 	}
 
+	public PaymentTypeEnum getPaymentType() {
+		return paymentType;
+	}
+
+	public void setPaymentType(PaymentTypeEnum paymentType) {
+		this.paymentType = paymentType;
+	}
+
+	public Double getAmount() {
+		
+		return amount;
+	}
+
+	public void setAmount(Double amount) {
+		this.amount = amount;
+	}
 }

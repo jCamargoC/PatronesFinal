@@ -3,6 +3,7 @@ package com.universalbank.controller;
 import java.io.IOException;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -12,7 +13,7 @@ import javax.jms.JMSException;
 import com.universalbank.ejb.api.SchedulingEJBContract;
 
 @Named("helloWorld")
-@ApplicationScoped
+@SessionScoped
 public class PageController {
 	@Inject
 	private SchedulingEJBContract executemotherfucker;
