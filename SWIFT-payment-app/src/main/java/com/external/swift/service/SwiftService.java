@@ -20,7 +20,7 @@ public class SwiftService {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public String pay(Payment payment) {		
 		if(payment!=null&&payment.getIdNumber()!=null&&payment.getIdType()!=null&&payment.getTargetEntityCode()!=null&&payment.getAmount()!=null&&payment.getAmount()>0) {
-			return "Succesfully payed";
+			return "Succesfully paid";
 		}
 		return "Failed payment";
 	}

@@ -56,8 +56,8 @@ public class LoansService {
 	public String pay(Loan loan) {
 		Loan l=loansEJB.payQuote(loan);
 		if(l!=null) {
-			return "Succesfully payed";
+			return "Préstamo pagado exitosamente";
 		}
-		return "Failed payment";
+		return "Pago de préstamo fallido";
 	}
 }

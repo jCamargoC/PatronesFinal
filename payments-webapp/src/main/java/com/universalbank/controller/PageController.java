@@ -18,6 +18,10 @@ import com.universalbank.external.objects.Loan;
 import com.universalbank.integrator.api.ExternalAppsAggregator;
 import com.universalbank.integrator.api.impl.crm.CRMSystemInvoker;
 import com.universalbank.integrator.api.impl.loan.LoanSystemInvoker;
+import com.universalbank.payments.api.impl.bill.BillPaymentExecutor;
+import com.universalbank.payments.api.impl.loan.LoanPaymentExecutor;
+import com.universalbank.payments.api.impl.pse.PSEPaymentExecutor;
+import com.universalbank.payments.api.impl.swift.SWIFTPaymentExecutor;
 
 @Named("helloWorld")
 @SessionScoped
@@ -59,6 +63,11 @@ public class PageController {
 		System.out.println(externalAppsAggregator.aggregateInvocations(c, ExternalAppEnum.ACCOUNT,ExternalAppEnum.CRM,ExternalAppEnum.LOANS));
 		Loan a2=new LoanSystemInvoker().invokeExternalApp(data, Loan.class);
 		System.out.println(a2.getLoanType());
+		data.put("amount", new Double(30000.00));
+		System.out.println(new BillPaymentExecutor().executePayment(data));
+		System.out.println(new LoanPaymentExecutor().executePayment(data));
+		System.out.println(new PSEPaymentExecutor().executePayment(data));
+		System.out.println(new SWIFTPaymentExecutor().executePayment(data));
         return "Hello" + " " + firstName + " " + lastName + "!";
     }
     

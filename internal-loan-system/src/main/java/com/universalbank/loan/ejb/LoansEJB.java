@@ -9,6 +9,7 @@ import javax.ejb.Stateless;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.universalbank.loan.objects.Loan;
 import com.universalbank.loan.objects.LoanList;
 
@@ -53,6 +54,7 @@ public class LoansEJB {
 		File file=new File(path);
 		ObjectMapper mapper=new ObjectMapper();
 		try {
+			mapper.enable(SerializationFeature.INDENT_OUTPUT);
 			mapper.writeValue(file, loansList);
 		} catch (JsonParseException e) {
 			// TODO Auto-generated catch block

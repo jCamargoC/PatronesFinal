@@ -1,1 +1,59 @@
-{"loans":[{"identificationNumber":"123456789","identificationType":"CC","loanType":"LIBRE_INVERSION","amount":1.2E7,"payed":5500000.0,"quoteAmount":500000.0},{"identificationNumber":"35456677","identificationType":"CC","loanType":"VIVIENDA","amount":2000000.0,"payed":0.0,"quoteAmount":500000.0},{"identificationNumber":"56754756","identificationType":"NIT","loanType":"VEHICULO","amount":1.2E9,"payed":0.0,"quoteAmount":500000.0},{"identificationNumber":"657678564","identificationType":"CC","loanType":"LIBRE_INVERSION","amount":1.2E7,"payed":0.0,"quoteAmount":500000.0},{"identificationNumber":"97867766","identificationType":"CC","loanType":"LIBRE_INVERSION","amount":1.3E7,"payed":0.0,"quoteAmount":500000.0},{"identificationNumber":"654834211","identificationType":"CC","loanType":"LIBRE_INVERSION","amount":1.5E7,"payed":0.0,"quoteAmount":500000.0},{"identificationNumber":"98756123","identificationType":"CC","loanType":"LIBRE_INVERSION","amount":1.6E7,"payed":0.0,"quoteAmount":500000.0},{"identificationNumber":"12333","identificationType":"CC","loanType":"LIBRE_INVERSION","amount":1.5E7,"payed":0.0,"quoteAmount":500000.0}]}
+{
+  "loans" : [ {
+    "identificationNumber" : "123456789",
+    "identificationType" : "CC",
+    "loanType" : "LIBRE_INVERSION",
+    "amount" : 1.2E7,
+    "payed" : 6000000.0,
+    "quoteAmount" : 500000.0
+  }, {
+    "identificationNumber" : "35456677",
+    "identificationType" : "CC",
+    "loanType" : "VIVIENDA",
+    "amount" : 2000000.0,
+    "payed" : 0.0,
+    "quoteAmount" : 500000.0
+  }, {
+    "identificationNumber" : "56754756",
+    "identificationType" : "NIT",
+    "loanType" : "VEHICULO",
+    "amount" : 1.2E9,
+    "payed" : 0.0,
+    "quoteAmount" : 500000.0
+  }, {
+    "identificationNumber" : "657678564",
+    "identificationType" : "CC",
+    "loanType" : "LIBRE_INVERSION",
+    "amount" : 1.2E7,
+    "payed" : 0.0,
+    "quoteAmount" : 500000.0
+  }, {
+    "identificationNumber" : "97867766",
+    "identificationType" : "CC",
+    "loanType" : "LIBRE_INVERSION",
+    "amount" : 1.3E7,
+    "payed" : 0.0,
+    "quoteAmount" : 500000.0
+  }, {
+    "identificationNumber" : "654834211",
+    "identificationType" : "CC",
+    "loanType" : "LIBRE_INVERSION",
+    "amount" : 1.5E7,
+    "payed" : 0.0,
+    "quoteAmount" : 500000.0
+  }, {
+    "identificationNumber" : "98756123",
+    "identificationType" : "CC",
+    "loanType" : "LIBRE_INVERSION",
+    "amount" : 1.6E7,
+    "payed" : 0.0,
+    "quoteAmount" : 500000.0
+  }, {
+    "identificationNumber" : "12333",
+    "identificationType" : "CC",
+    "loanType" : "LIBRE_INVERSION",
+    "amount" : 1.5E7,
+    "payed" : 0.0,
+    "quoteAmount" : 500000.0
+  } ]
+}

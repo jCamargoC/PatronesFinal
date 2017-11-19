@@ -39,7 +39,7 @@ public class RESTInvoker {
 		return null;
 	}
 	
-	public <T> T doPost(Class<T> returnClazz, String url, String accept,String body,Object payload) {
+	public static <T> T doPost(Class<T> returnClazz, String url, String accept,String body,Object payload) {
 		try {
 
 			ClientRequest request = new ClientRequest(
