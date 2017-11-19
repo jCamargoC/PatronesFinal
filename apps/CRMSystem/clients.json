@@ -1,0 +1,90 @@
+{
+	"clients":[
+		{
+			"identificationNumber":"123456789",
+			"identificationType":"CC",
+			"clientType":"PERSONA_NATURAL",
+			"names":"Alma Marcela",
+			"lastNames":"Rico Parada",
+			"email":"almarico@gmail.com",
+			"cellPhone":"3102345678",
+			"phone":"7676766"
+		},
+		{
+			"identificationNumber":"35456677",
+			"identificationType":"CC",
+			"clientType":"PERSONA_NATURAL",
+			"names":"Armando",
+			"lastNames":"Casas",
+			"email":"armandocasas@gmail.com",
+			"cellPhone":"3102345678",
+			"phone":"7676766"
+			
+		},
+		{
+			"identificationNumber":"56754756",
+			"identificationType":"NIT",
+			"clientType":"PERSONA_JURIDICA",
+			"names":"Aquiles",
+			"lastNames":"Pinto Flórez",
+			"email":"pintoflorez@gmail.com",
+			"cellPhone":"3102345678",
+			"phone":"7676766"
+			
+		},
+		{
+			"identificationNumber":"657678564",
+			"identificationType":"CC",
+			"clientType":"PERSONA_NATURAL",
+			"names":"Alba Q",
+			"lastNames":"Lozano",
+			"email":"qlozano@gmail.com",
+			"cellPhone":"3102345678",
+			"phone":"7676766"
+			
+		},
+		{
+			"identificationNumber":"97867766",
+			"identificationType":"CC",
+			"clientType":"PERSONA_NATURAL",
+			"names":"Ema",
+			"lastNames":"Madera de Gallo",
+			"email":"maderadegallo@gmail.com",
+			"cellPhone":"3102345678",
+			"phone":"7676766"
+			
+		},
+		{
+			"identificationNumber":"654834211",
+			"identificationType":"CC",
+			"clientType":"PERSONA_NATURAL",
+			"names":"Soyla",
+			"lastNames":"Vaca de Toro",
+			"email":"svdtoro@gmail.com",
+			"cellPhone":"3102345678",
+			"phone":"7676766"
+			
+		},
+		{
+			"identificationNumber":"98756123",
+			"identificationType":"CC",
+			"clientType":"PERSONA_NATURAL",
+			"names":"Alba Hat",
+			"lastNames":"Mamat",
+			"email":"abahatmamat@gmail.com",
+			"cellPhone":"3102345678",
+			"phone":"7676766"
+			
+		},
+		{
+			"identificationNumber":"12333",
+			"identificationType":"CC",
+			"clientType":"PERSONA_NATURAL",
+			"names":"Elba",
+			"lastNames":"Surero",
+			"email":"elbasurero@gmail.com",
+			"cellPhone":"3102345678",
+			"phone":"7676766"
+		}
+	]
+}

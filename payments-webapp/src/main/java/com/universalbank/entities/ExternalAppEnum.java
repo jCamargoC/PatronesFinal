@@ -1,10 +1,16 @@
 package com.universalbank.entities;
 
+import com.universalbank.external.objects.Account;
+import com.universalbank.external.objects.Loan;
+import com.universalbank.external.objects.Client;
 import com.universalbank.integrator.api.IExternalAppInvoker;
+import com.universalbank.integrator.api.impl.account.AccountSystemInvoker;
+import com.universalbank.integrator.api.impl.loan.LoanSystemInvoker;
+import com.universalbank.integrator.api.impl.crm.CRMSystemInvoker;
 
 public enum ExternalAppEnum {
 	
-	ACCOUNT("AccountSystem",null,null),LOANS("LoansSystem",null,null),CRM("CRMSystem",null,null);
+	ACCOUNT("AccountSystem",Account.class,AccountSystemInvoker.class),LOANS("LoansSystem",Loan.class,LoanSystemInvoker.class),CRM("CRMSystem",Client.class,CRMSystemInvoker.class);
 	
 	private String name;
 	

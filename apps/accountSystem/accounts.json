@@ -1,0 +1,59 @@
+{
+	"accounts":[
+		{
+			"identificationNumber":"123456789",
+			"identificationType":"CC",
+			"accountType":"AHORROS",
+			"amount":12000000.00
+			
+		},
+		{
+			"identificationNumber":"35456677",
+			"identificationType":"CC",
+			"accountType":"CORRIENTE",
+			"amount":2000000.00
+			
+		},
+		{
+			"identificationNumber":"56754756",
+			"identificationType":"NIT",
+			"accountType":"EMPRESARIAL",
+			"amount":1200000000.00
+			
+		},
+		{
+			"identificationNumber":"657678564",
+			"identificationType":"CC",
+			"accountType":"AHORROS",
+			"amount":12000000.00
+			
+		},
+		{
+			"identificationNumber":"97867766",
+			"identificationType":"CC",
+			"accountType":"AHORROS",
+			"amount":13000000.00
+			
+		},
+		{
+			"identificationNumber":"654834211",
+			"identificationType":"CC",
+			"accountType":"AHORROS",
+			"amount":15000000.00
+			
+		},
+		{
+			"identificationNumber":"98756123",
+			"identificationType":"CC",
+			"accountType":"AHORROS",
+			"amount":16000000.00
+			
+		},
+		{
+			"identificationNumber":"12333",
+			"identificationType":"CC",
+			"accountType":"AHORROS",
+			"amount":15000000.00
+		}
+	]
+}
