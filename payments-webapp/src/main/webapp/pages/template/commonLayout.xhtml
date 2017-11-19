@@ -38,12 +38,10 @@
 			<div class="row">
 				<div class="col-md-3">
 					<h:form>
-						<p:slideMenu style="width:180px">
-							<p:submenu label="Ajax">
-								<p:menuitem value="Save" actionListener="#{menuView.save}"
-									icon="ui-icon-disk" />
-								<p:menuitem value="Update" actionListener="#{menuView.update}"
-									icon="ui-icon-arrowrefresh-1-w" />
+						<p:slideMenu style="width:200px">
+							<p:submenu label="Inscripción de facturas">
+								<p:menuitem value="Crear factura" outcome="createBill"
+									icon="ui-icon-disk" />								
 							</p:submenu>
 							<p:submenu label="Non-Ajax">
 								<p:menuitem value="Delete" actionListener="#{menuView.delete}"

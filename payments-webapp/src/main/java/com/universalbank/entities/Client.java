@@ -8,9 +8,12 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 @Entity
+@NamedQueries({@NamedQuery(name="Client.getByUsername",query="SELECT c FROM Client c where c.username=:username")})
 public class Client implements Serializable{
 
 	@Id

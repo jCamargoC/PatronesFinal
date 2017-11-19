@@ -8,31 +8,96 @@
 <h:body>
 
 	<ui:composition template="template/commonLayout.xhtml">
+		<ui:define name="header">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+
+						<p:menubar>
+
+
+							<f:facet name="options">
+								<h:form>
+									<p:commandButton type="button" value="Logout"
+										icon="ui-icon-extlink" action="#{helloWorld.logout()}" />
+								</h:form>
+							</f:facet>
+						</p:menubar>
+
+					</div>
+				</div>
+			</div>
+			<p:separator></p:separator>
+		</ui:define>
 
 		<ui:define name="content">
 			<h:form>
+				<p:accordionPanel multiple="true">
+					<p:tab title="Datos del cliente">
+						<h:panelGrid columns="2" cellpadding="10">
+							<h:outputText value="Nombres:" />
+							<h:outputText value="#{mainPageController.clientData.names}" />
+						</h:panelGrid>
+						<h:panelGrid columns="2" cellpadding="10">
+							<h:outputText value="Apellidos:" />
+							<h:outputText value="#{mainPageController.clientData.lastNames}" />
+						</h:panelGrid>
+						<h:panelGrid columns="2" cellpadding="10">
+							<h:outputText value="Tipo de identificación:" />
+							<h:outputText
+								value="#{mainPageController.clientData.identificationType}" />
+						</h:panelGrid>
+						<h:panelGrid columns="2" cellpadding="10">
+							<h:outputText value="Número de identificación:" />
+							<h:outputText
+								value="#{mainPageController.clientData.identificationNumber}" />
+						</h:panelGrid>
+						<h:panelGrid columns="2" cellpadding="10">
+							<h:outputText value="Correo electrónico:" />
+							<h:outputText value="#{mainPageController.clientData.email}" />
+						</h:panelGrid>
+						<h:panelGrid columns="2" cellpadding="10">
+							<h:outputText value="Teléfono móvil:" />
+							<h:outputText value="#{mainPageController.clientData.cellPhone}" />
+						</h:panelGrid>
+						<h:panelGrid columns="2" cellpadding="10">
+							<h:outputText value="Teléfono Fijo:" />
+							<h:outputText value="#{mainPageController.clientData.phone}" />
+						</h:panelGrid>
+					</p:tab>
+					<p:tab title="Datos de cuenta bancaria">
+						<h:panelGrid columns="2" cellpadding="10">
+							<h:outputText value="Tipo de cuenta bancacria:" />
+							<h:outputText
+								value="#{mainPageController.accountData.accountType}" />
+						</h:panelGrid>
+						<h:panelGrid columns="2" cellpadding="10">
+							<h:outputText value="Saldo de cuenta:" />
+							<h:outputText value="#{mainPageController.accountData.amount}" />
+						</h:panelGrid>
+					</p:tab>
+					<p:tab title="Datos de préstamo">
+						<h:panelGrid columns="2" cellpadding="10">
+							<h:outputText value="Tipo de préstamo" />
+							<h:outputText value="#{mainPageController.loanData.loanType}" />
+						</h:panelGrid>
+						<h:panelGrid columns="2" cellpadding="10">
+							<h:outputText value="Monto del préstamo" />
+							<h:outputText value="#{mainPageController.loanData.amount}" />
+						</h:panelGrid>
+						<h:panelGrid columns="2" cellpadding="10">
+							<h:outputText value="Valor pagado:" />
+							<h:outputText value="#{mainPageController.loanData.payed}" />
+						</h:panelGrid>
+						<h:panelGrid columns="2" cellpadding="10">
+							<h:outputText value="Valor de cuota" />
+							<h:outputText value="#{mainPageController.loanData.quoteAmount}" />
+						</h:panelGrid>
+					</p:tab>
+				</p:accordionPanel>
 
-				<p:panel header="PrimeFaces Hello World Example">
-					<h:panelGrid columns="2" cellpadding="4">
-						<h:outputText value="First Name: " />
-						<p:inputText value="#{helloWorld.firstName}" />
 
-						<h:outputText value="Last Name: " />
-						<p:inputText value="#{helloWorld.lastName}" />
 
-						<p:commandButton value="Submit" update="greeting"
-							oncomplete="PF('greetingDialog').show()" />
-						<p:commandButton value="create Timer" update="greeting"
-							action="#{helloWorld.logout()}" />
-					</h:panelGrid>
-				</p:panel>
-
-				<p:dialog header="Greeting" widgetVar="greetingDialog" modal="true"
-					resizable="false">
-					<h:panelGrid id="greeting" columns="1" cellpadding="4">
-						<h:outputText value="#{helloWorld.showGreeting()}" />
-					</h:panelGrid>
-				</p:dialog>
 
 			</h:form>
 		</ui:define>
