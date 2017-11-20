@@ -4,13 +4,108 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
 <h:body>
-
 	<ui:composition template="template/commonLayout.xhtml">
+		<ui:define name="header">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<p:menubar>
+							<f:facet name="options">
 
+								<h:form>
+									<p:commandButton value="Logout" icon="ui-icon-extlink"
+										action="#{createBillController.logout()}" />
+								</h:form>
+							</f:facet>
+						</p:menubar>
+
+					</div>
+				</div>
+			</div>
+			<p:separator></p:separator>
+		</ui:define>
 		<ui:define name="content">
-			<h3>Tenga su bill</h3>
+			<h:form>
+				<p:panel header="Creación / Edición de Factura"
+					style="margin-bottom:20px">
+
+					<h:panelGrid columns="2" cellpadding="10">
+						<p:outputLabel for="billId" value="Identificador de la Factura" />
+						<p:inputText id="billId"
+							value="#{createBillController.billSubscription.billId}" />
+
+						<p:outputLabel for="billType" value="Tipo de factura" />
+						<p:selectOneMenu id="billType"
+							value="#{createBillController.billSubscription.paymentType}">
+							<f:selectItem itemLabel="Seleccione un valor" itemValue="" />
+							<f:selectItems value="#{createBillController.paymentTypes}" />
+						</p:selectOneMenu>
+						<p:outputLabel for="amount" value="Monto de la factura" />
+						<p:inputNumber id="amount"
+							value="#{createBillController.billSubscription.amount}">
+						</p:inputNumber>
+						<p:outputLabel for="dueDate" value="Fecha de vencimiento:" />
+						<p:calendar id="dueDate" value="#{createBillController.dueDate}"
+							showOn="button" />
+						<p:outputLabel for="scheduleType" value="Tipo de programación" />
+						<p:selectOneMenu id="scheduleType"
+							value="#{createBillController.billSubscription.scheduleType}">
+							<f:selectItem itemLabel="Seleccione un valor" itemValue="" />
+							<f:selectItems var="handlerSelect"
+								value="#{createBillController.scheduleTypes}"
+								itemValue="#{handlerSelect}" />
+
+						</p:selectOneMenu>
+					</h:panelGrid>
+					<p:panel id="gridSched"
+						header="Datos para programación personalizada">
+						<h:panelGrid columns="2" cellpadding="10">
+							<h:outputLabel for="months" value="Meses: " />
+							<p:selectCheckboxMenu id="months"
+								value="#{createBillController.selectedMonths}" label="Meses"
+								multiple="true" filter="true" filterMatchMode="startsWith"
+								panelStyle="width:250px">
+								<f:selectItem itemLabel="Enero" itemValue="1" />
+								<f:selectItem itemLabel="Febrero" itemValue="2" />
+								<f:selectItem itemLabel="Marzo" itemValue="3" />
+								<f:selectItem itemLabel="Abril" itemValue="4" />
+								<f:selectItem itemLabel="Mayo" itemValue="5" />
+								<f:selectItem itemLabel="Junio" itemValue="6" />
+								<f:selectItem itemLabel="Julio" itemValue="7" />
+								<f:selectItem itemLabel="Agosto" itemValue="8" />
+								<f:selectItem itemLabel="Septiembre" itemValue="9" />
+								<f:selectItem itemLabel="Octubre" itemValue="10" />
+								<f:selectItem itemLabel="Noviembre" itemValue="11" />
+								<f:selectItem itemLabel="Diciembre" itemValue="12" />
+							</p:selectCheckboxMenu>
+							<p:outputLabel for="day" value="Día" />
+							<p:selectOneMenu id="day" value="#{createBillController.day}">
+								<f:selectItem itemLabel="Seleccione un valor" itemValue="" />
+								<f:selectItems value="#{createBillController.days}" />
+							</p:selectOneMenu>
+							<p:outputLabel for="hour" value="Hora" />
+							<p:selectOneMenu id="hour" value="#{createBillController.hour}">
+								<f:selectItem itemLabel="Seleccione un valor" itemValue="" />
+								<f:selectItems value="#{createBillController.hours}" />
+							</p:selectOneMenu>
+
+							<p:outputLabel for="minute" value="Minuto" />
+							<p:selectOneMenu id="minute"
+								value="#{createBillController.minute}">
+								<f:selectItem itemLabel="Seleccione un valor" itemValue="" />
+								<f:selectItems value="#{createBillController.minutes}" />
+							</p:selectOneMenu>
+						</h:panelGrid>
+
+					</p:panel>
+
+					<p:commandButton value="Guardar"
+						action="#{createBillController.saveBill()}" />
+				</p:panel>
+			</h:form>
 		</ui:define>
 
 	</ui:composition>

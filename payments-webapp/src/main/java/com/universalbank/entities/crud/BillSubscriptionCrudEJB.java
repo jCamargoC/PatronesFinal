@@ -47,6 +47,9 @@ public class BillSubscriptionCrudEJB implements IBillSubscriptionCrud{
 	public boolean delete(Long id) {
 		BillSubscription  billSubscription=find(id);
 		if(billSubscription!=null) {
+			if(billSubscription.getScheduleInfo()!=null) {
+				entityManager.remove(billSubscription.getScheduleInfo());
+			}
 			entityManager.remove(billSubscription);
 			return true;
 		}

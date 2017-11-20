@@ -10,7 +10,7 @@ import com.universalbank.integrator.api.impl.crm.CRMSystemInvoker;
 
 public enum ExternalAppEnum {
 	
-	ACCOUNT("AccountSystem",Account.class,AccountSystemInvoker.class),LOANS("LoansSystem",Loan.class,LoanSystemInvoker.class),CRM("CRMSystem",Client.class,CRMSystemInvoker.class);
+	CUENTA("AccountSystem",Account.class,AccountSystemInvoker.class),PRESTAMO("LoansSystem",Loan.class,LoanSystemInvoker.class),CRM("CRMSystem",Client.class,CRMSystemInvoker.class);
 	
 	private String name;
 	

@@ -5,7 +5,7 @@ import com.universalbank.payments.api.impl.pse.PSEPaymentExecutor;
 import com.universalbank.payments.api.impl.swift.SWIFTPaymentExecutor;
 public enum PaymentTypeEnum implements PaymentType{
 
-	ACCOUNT(BillPaymentExecutor.class),LOAN(LoanPaymentExecutor.class),NATIONAL(PSEPaymentExecutor.class),INTERNATIONAL(SWIFTPaymentExecutor.class);
+	CUENTA(BillPaymentExecutor.class),PRESTAMO(LoanPaymentExecutor.class),PSE(PSEPaymentExecutor.class),INTERNACIONAL(SWIFTPaymentExecutor.class);
 	
 	private Class<?> clazz;
 	

@@ -4,34 +4,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
 <h:body>
+	<h:form>
+		<ui:composition template="template/commonLayout.xhtml">
+			<ui:define name="header">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-12">
+							<p:menubar>
+								<f:facet name="options">
 
-	<ui:composition template="template/commonLayout.xhtml">
-		<ui:define name="header">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-12">
+									<p:commandButton value="Logout" icon="ui-icon-extlink"
+										action="#{mainPageController.logout()}" />
 
-						<p:menubar>
+								</f:facet>
+							</p:menubar>
 
-
-							<f:facet name="options">
-								<h:form>
-									<p:commandButton type="button" value="Logout"
-										icon="ui-icon-extlink" action="#{helloWorld.logout()}" />
-								</h:form>
-							</f:facet>
-						</p:menubar>
-
+						</div>
 					</div>
 				</div>
-			</div>
-			<p:separator></p:separator>
-		</ui:define>
+				<p:separator></p:separator>
+			</ui:define>
 
-		<ui:define name="content">
-			<h:form>
+			<ui:define name="content">
+				<p:growl id="msg" />
+
+
 				<p:accordionPanel multiple="true">
 					<p:tab title="Datos del cliente">
 						<h:panelGrid columns="2" cellpadding="10">
@@ -94,16 +94,45 @@
 							<h:outputText value="#{mainPageController.loanData.quoteAmount}" />
 						</h:panelGrid>
 					</p:tab>
+					<p:tab title="Facturas inscritas">
+						<p:dataTable var="bill"
+							value="#{mainPageController.billSubscriptions}">
+							<p:column headerText="Id">
+								<h:outputText value="#{bill.id}" />
+							</p:column>
+
+							<p:column headerText="Tipo de factura">
+								<h:outputText value="#{bill.paymentType}" />
+							</p:column>
+
+							<p:column headerText="Monto">
+								<h:outputText value="#{bill.amount}" />
+							</p:column>
+
+							<p:column headerText="Tipo de pago">
+								<h:outputText value="#{bill.scheduleType}" />
+							</p:column>
+
+							<p:column headerText="Acciones">
+
+								<p:commandButton value="Pagar"
+									rendered="#{bill.scheduleType=='MANUAL'}"
+									action="#{mainPageController.pay(bill)}" update="msg"></p:commandButton>
+								<p:button value="Editar" outcome="goToEdit">
+									<f:param name="billId" value="#{bill.id}" />
+								</p:button>
+								<p:commandButton value="Eliminar"
+									action="#{mainPageController.delete(bill)}" update="msg">
+								</p:commandButton>
+
+							</p:column>
+						</p:dataTable>
+					</p:tab>
 				</p:accordionPanel>
+			</ui:define>
 
-
-
-
-			</h:form>
-		</ui:define>
-
-	</ui:composition>
-
+		</ui:composition>
+	</h:form>
 </h:body>
 
 </html>

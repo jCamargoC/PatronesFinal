@@ -60,7 +60,7 @@ public class PageController {
 		Client c=new Client();
 		c.setDocumentNumber("123456789");
 		c.setDocumentType("CC");
-		System.out.println(externalAppsAggregator.aggregateInvocations(c, ExternalAppEnum.ACCOUNT,ExternalAppEnum.CRM,ExternalAppEnum.LOANS));
+		System.out.println(externalAppsAggregator.aggregateInvocations(c, ExternalAppEnum.CUENTA,ExternalAppEnum.CRM,ExternalAppEnum.PRESTAMO));
 		Loan a2=new LoanSystemInvoker().invokeExternalApp(data, Loan.class);
 		System.out.println(a2.getLoanType());
 		data.put("amount", new Double(30000.00));

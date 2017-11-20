@@ -26,6 +26,8 @@ public class SchedulingData implements Serializable{
 	
 	private String hour;
 	
+	private String minute;
+	
 	@OneToOne(mappedBy="scheduleInfo")
 	private BillSubscription billSubscription;
 
@@ -67,6 +69,14 @@ public class SchedulingData implements Serializable{
 
 	public void setBillSubscription(BillSubscription billSubscription) {
 		this.billSubscription = billSubscription;
+	}
+
+	public String getMinute() {
+		return minute;
+	}
+
+	public void setMinute(String minute) {
+		this.minute = minute;
 	}
 	
 }

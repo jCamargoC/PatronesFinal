@@ -4,7 +4,7 @@ import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 import javax.ejb.Local;
 import javax.ejb.ScheduleExpression;
-import javax.ejb.Stateless;
+import javax.ejb.Singleton;
 import javax.ejb.Timeout;
 import javax.ejb.Timer;
 import javax.ejb.TimerConfig;
@@ -19,7 +19,7 @@ import com.universalbank.ejb.api.SchedulingEJBContract;
 import com.universalbank.entities.BillSubscription;
 import com.universalbank.entities.ScheduleTypeEnum;
 
-@Stateless
+@Singleton
 @Local(SchedulingEJBContract.class)
 public class SchedulingEJB implements SchedulingEJBContract {
 	@Resource
@@ -52,7 +52,7 @@ public class SchedulingEJB implements SchedulingEJBContract {
 		timerConfig.setInfo(billSubscription);
 		timerConfig.setPersistent(true);
 		ScheduleExpression scheduleExpression = null;
-		if (ScheduleTypeEnum.DUE_DATE.equals(billSubscription.getScheduleType())) {
+		if (ScheduleTypeEnum.FECHA_VENCIMIENTO.equals(billSubscription.getScheduleType())) {
 			scheduleExpression = new ScheduleExpression();
 			scheduleExpression.month("*");
 			scheduleExpression.dayOfMonth(billSubscription.getDueDate().getDayOfMonth());
@@ -62,6 +62,7 @@ public class SchedulingEJB implements SchedulingEJBContract {
 			scheduleExpression.month(billSubscription.getScheduleInfo().getMonths());
 			scheduleExpression.dayOfMonth(billSubscription.getScheduleInfo().getDay());
 			scheduleExpression.hour(billSubscription.getScheduleInfo().getHour());
+			scheduleExpression.minute(billSubscription.getScheduleInfo().getMinute());
 		}
 		timerService.createCalendarTimer(scheduleExpression, timerConfig);
 	}

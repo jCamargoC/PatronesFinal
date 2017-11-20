@@ -12,13 +12,15 @@ public class PaymentRouter {
 
 	public String executePayment(BillSubscription billSubscription) {
 		try {
-			IPayment iPayment=(IPayment) billSubscription.getPaymentType().getImplementationClass().newInstance();
-			Map<String, Object> data=new HashMap<String, Object>();
-			data.put("amount", billSubscription.getAmount());
-			data.put("idNumber", billSubscription.getClient().getDocumentNumber());
-			data.put("idType", billSubscription.getClient().getDocumentType());
-			String result=iPayment.executePayment(data);
-			return result;
+			if (billSubscription != null) {
+				IPayment iPayment = (IPayment) billSubscription.getPaymentType().getImplementationClass().newInstance();
+				Map<String, Object> data = new HashMap<String, Object>();
+				data.put("amount", billSubscription.getAmount());
+				data.put("idNumber", billSubscription.getClient().getDocumentNumber());
+				data.put("idType", billSubscription.getClient().getDocumentType());
+				String result = iPayment.executePayment(data);
+				return result;
+			}
 		} catch (InstantiationException e) {
 
 			e.printStackTrace();
