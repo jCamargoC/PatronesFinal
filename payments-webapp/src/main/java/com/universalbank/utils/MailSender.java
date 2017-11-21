@@ -13,8 +13,8 @@ import javax.mail.internet.MimeMessage;
 public class MailSender {
 	
 	public static void sendMail(String messageStr,String subject,String email) {
-		final String username = "jlcamargoc@gmail.com";
-		final String password = "el password";
+		final String username = "correoaes2017@gmail.com";
+		final String password = "espada09";
 
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
